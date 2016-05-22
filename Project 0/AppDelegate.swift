@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import HealthKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -31,33 +30,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         rootViewController.view.backgroundColor = UIColor.cyanColor()
         
-        aSlider = UISlider(frame: CGRect(x: 10, y: 100, width: 200, height: 30))
-        bSlider = UISlider(frame: CGRect(x: 10, y: 200, width: 200, height: 30))
+        // Initiates slider position
+        aSlider = UISlider(frame: CGRect(x: 10, y: 100, width: 250, height: 30))
+        bSlider = UISlider(frame: CGRect(x: 10, y: 200, width: 250, height: 30))
         
+        // Initiates slider values
         aSlider.maximumValue = 1.0
         aSlider.minimumValue = 0.0
-        
         bSlider.maximumValue = 1.0
         bSlider.minimumValue = 0.0
         
+        // Adds sliders to our view
         rootViewController.view.addSubview(aSlider)
         rootViewController.view.addSubview(bSlider)
         
+        // Associates our slider with our sliderChangedMethod
         aSlider.addTarget(self, action: #selector(AppDelegate.sliderAChanged), forControlEvents: UIControlEvents.ValueChanged)
         bSlider.addTarget(self, action: #selector(AppDelegate.sliderBChanged), forControlEvents: UIControlEvents.ValueChanged)
         
-        originalAValue = UILabel(frame: CGRect(x: 250, y: 100, width: 100, height: 30))
+        // Labels for the values of each slider
+        originalAValue = UILabel(frame: CGRect(x: 265, y: 100, width: 100, height: 30))
         originalAValue.text = "\(aSlider.value)"
-        
-        originalBValue = UILabel(frame: CGRect(x: 250, y: 200, width: 100, height: 30))
+        originalBValue = UILabel(frame: CGRect(x: 265, y: 200, width: 100, height: 30))
         originalBValue.text = "\(bSlider.value)"
         
+        // Initiates our originalValue Labels
         aLabel = UILabel(frame: CGRect(x: 125, y: 300, width: 300, height: 30))
-        aLabel.text = "A: \(aSlider.value)"
+        aLabel.text = "X + Y: \(aSlider.value)"
+        bLabel = UILabel(frame: CGRect(x: 125, y: 350, width: 300, height: 30))
+        bLabel.text = "X * Y: \(bSlider.value)"
         
-        bLabel = UILabel(frame: CGRect(x: 125, y: 400, width: 300, height: 30))
-        bLabel.text = "B: \(bSlider.value)"
-        
+        // Adds all labels to our rootViewController
         rootViewController.view.addSubview(aLabel)
         rootViewController.view.addSubview(bLabel)
         rootViewController.view.addSubview(originalAValue)
