@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED654AC01CF82CD00034926D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED654ABF1CF82CD00034926D /* Default-568h@2x.png */; };
 		EDD1B4581CE9873F0040102A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD1B4571CE9873F0040102A /* AppDelegate.swift */; };
 		EDD1B45F1CE9873F0040102A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD1B45E1CE9873F0040102A /* Assets.xcassets */; };
 		EDD1B46D1CE9873F0040102A /* Project_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD1B46C1CE9873F0040102A /* Project_0Tests.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED654ABF1CF82CD00034926D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EDD1B4541CE9873F0040102A /* Project 0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD1B4571CE9873F0040102A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDD1B45E1CE9873F0040102A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		EDD1B44B1CE9873F0040102A = {
 			isa = PBXGroup;
 			children = (
+				ED654ABF1CF82CD00034926D /* Default-568h@2x.png */,
 				EDD1B4561CE9873F0040102A /* Project 0 */,
 				EDD1B46B1CE9873F0040102A /* Project 0Tests */,
 				EDD1B4761CE9873F0040102A /* Project 0UITests */,
@@ -221,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDD1B45F1CE9873F0040102A /* Assets.xcassets in Resources */,
+				ED654AC01CF82CD00034926D /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +457,7 @@
 				EDD1B47E1CE9873F0040102A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDD1B47F1CE9873F0040102A /* Build configuration list for PBXNativeTarget "Project 0Tests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +466,7 @@
 				EDD1B4811CE9873F0040102A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDD1B4821CE9873F0040102A /* Build configuration list for PBXNativeTarget "Project 0UITests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +475,7 @@
 				EDD1B4841CE9873F0040102A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
