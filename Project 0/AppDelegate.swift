@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var aSlider: UISlider!
     var aLabel: UILabel!
+    var xLabel: UILabel!
+    var yLabel: UILabel!
     var bLabel: UILabel!
     var originalAValue: UILabel!
     var originalBValue: UILabel!
@@ -21,18 +23,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var aSliderChanged: Float = 0.0
     
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         
         
         let rootViewController: UIViewController = UIViewController()
         
-        rootViewController.view.backgroundColor = UIColor.cyanColor()
+        rootViewController.view.backgroundColor = UIColor.cyan
         
         // Initiates slider position
-        aSlider = UISlider(frame: CGRect(x: 10, y: 100, width: 250, height: 30))
-        bSlider = UISlider(frame: CGRect(x: 10, y: 200, width: 250, height: 30))
+        xLabel = UILabel(frame: CGRect(x: 5, y: 100, width: 250, height: 30))
+        xLabel.text = "X:"
+        yLabel = UILabel(frame: CGRect(x: 5, y: 200, width: 250, height: 30))
+        yLabel.text = "Y:"
+        aSlider = UISlider(frame: CGRect(x: 20, y: 100, width: 250, height: 30))
+        bSlider = UISlider(frame: CGRect(x: 20, y: 200, width: 250, height: 30))
         
         // Initiates slider values
         aSlider.maximumValue = 1.0
@@ -41,12 +47,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         bSlider.minimumValue = 0.0
         
         // Adds sliders to our view
+        rootViewController.view.addSubview(xLabel)
+        rootViewController.view.addSubview(yLabel)
         rootViewController.view.addSubview(aSlider)
         rootViewController.view.addSubview(bSlider)
         
         // Associates our slider with our sliderChangedMethod
-        aSlider.addTarget(self, action: #selector(AppDelegate.sliderAChanged), forControlEvents: UIControlEvents.ValueChanged)
-        bSlider.addTarget(self, action: #selector(AppDelegate.sliderBChanged), forControlEvents: UIControlEvents.ValueChanged)
+        aSlider.addTarget(self, action: #selector(AppDelegate.sliderAChanged), for: UIControlEvents.valueChanged)
+        bSlider.addTarget(self, action: #selector(AppDelegate.sliderBChanged), for: UIControlEvents.valueChanged)
         
         // Labels for the values of each slider
         originalAValue = UILabel(frame: CGRect(x: 265, y: 100, width: 100, height: 30))
@@ -109,25 +117,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
     
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
     
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
     
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
     
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
